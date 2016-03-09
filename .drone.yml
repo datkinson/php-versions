@@ -2,9 +2,10 @@ compose:
   dind:
     image: docker:dind
     privileged: true
-    commands:
-      - docker --version
-      - echo $$PHP_VERSION
+build:
+  commands:
+    - docker --version
+    - echo $$PHP_VERSION
 matrix:
   PHP_VERSION:
     - 5.4
