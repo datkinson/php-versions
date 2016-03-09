@@ -1,8 +1,6 @@
-compose:
-  dind:
-    image: docker:dind
-    privileged: true
 build:
+  image: docker:dind
+  privileged: true
   commands:
     - docker --version
     - echo $$PHP_VERSION
