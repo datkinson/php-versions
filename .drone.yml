@@ -3,7 +3,9 @@ build:
   privileged: true
   commands:
     - docker --version
+    - sed -i -- 's/latest/$$PHP_VERSION/g' Dockerfile
     - echo $$PHP_VERSION
+    - cat Dockerfile
 matrix:
   PHP_VERSION:
     - 5.4
