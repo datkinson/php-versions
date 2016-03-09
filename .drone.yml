@@ -1,9 +1,10 @@
 build:
-  image: jpetazzo/dind
+  image: docker/dind
   privileged: true
   commands:
     - sed -i -- 's/latest/$$PHP_VERSION/g' Dockerfile
-    - wrapdocker && docker build -t continuousdeployment/php:$$PHP_VERSION .
+    - docker info
+    - docker build -t continuousdeployment/php:$$PHP_VERSION .
 matrix:
   PHP_VERSION:
     - 5.4
