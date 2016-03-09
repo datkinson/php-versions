@@ -1,4 +1,8 @@
 build:
-  image: php:latest
+  image: php:$$PHP_VERSION
   commands:
     - php --version
+  matrix:
+    PHP_VERSION:
+      - 5.5
+      - 5.6
