@@ -3,7 +3,7 @@ build:
   privileged: true
   commands:
     - sed -i -- 's/latest/$$PHP_VERSION/g' Dockerfile
-    - docker build -t continuousdeployment/php:$$PHP_VERSION .
+    - wrapdocker && docker build -t continuousdeployment/php:$$PHP_VERSION .
 matrix:
   PHP_VERSION:
     - 5.4
