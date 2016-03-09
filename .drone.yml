@@ -1,5 +1,5 @@
 build:
-  image: docker:dind
+  image: jpetazzo/dind
   privileged: true
   commands:
     - sed -i -- 's/latest/$$PHP_VERSION/g' Dockerfile
